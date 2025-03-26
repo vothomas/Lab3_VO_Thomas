@@ -1,0 +1,583 @@
+|Lab3_VO_Thomas
+clk => clk.IN7
+rst => rst.IN7
+p1_button => p1_button.IN1
+pass_button => pass_button.IN1
+rng_button => rng_button.IN1
+pass_input[0] => pass_input[0].IN1
+pass_input[1] => pass_input[1].IN1
+pass_input[2] => pass_input[2].IN1
+pass_input[3] => pass_input[3].IN1
+p1_input[0] => p1_input[0].IN1
+p1_input[1] => p1_input[1].IN1
+p1_input[2] => p1_input[2].IN1
+p1_input[3] => p1_input[3].IN1
+timer_tens[0] <= sevenSegDecoder:DTimerTens.port1
+timer_tens[1] <= sevenSegDecoder:DTimerTens.port1
+timer_tens[2] <= sevenSegDecoder:DTimerTens.port1
+timer_tens[3] <= sevenSegDecoder:DTimerTens.port1
+timer_ones[0] <= sevenSegDecoder:DTimerOnes.port1
+timer_ones[1] <= sevenSegDecoder:DTimerOnes.port1
+timer_ones[2] <= sevenSegDecoder:DTimerOnes.port1
+timer_ones[3] <= sevenSegDecoder:DTimerOnes.port1
+score_tens[0] <= sevenSegDecoder:DTens.port1
+score_tens[1] <= sevenSegDecoder:DTens.port1
+score_tens[2] <= sevenSegDecoder:DTens.port1
+score_tens[3] <= sevenSegDecoder:DTens.port1
+sum_score_ones[0] <= sevenSegDecoder:DSum_ScoreOnes.port1
+sum_score_ones[1] <= sevenSegDecoder:DSum_ScoreOnes.port1
+sum_score_ones[2] <= sevenSegDecoder:DSum_ScoreOnes.port1
+sum_score_ones[3] <= sevenSegDecoder:DSum_ScoreOnes.port1
+RNG[0] <= sevenSegDecoder:DRNG.port1
+RNG[1] <= sevenSegDecoder:DRNG.port1
+RNG[2] <= sevenSegDecoder:DRNG.port1
+RNG[3] <= sevenSegDecoder:DRNG.port1
+P1[0] <= sevenSegDecoder:Dp1.port1
+P1[1] <= sevenSegDecoder:Dp1.port1
+P1[2] <= sevenSegDecoder:Dp1.port1
+P1[3] <= sevenSegDecoder:Dp1.port1
+NmatchLED <= Is15:verify.port2
+matchLED <= win.DB_MAX_OUTPUT_PORT_TYPE
+logoutLED <= Access:myAC.port11
+logInLED <= Access:myAC.port12
+
+
+|Lab3_VO_Thomas|buttonShaper:passwordBS
+b_in => Selector0.IN1
+b_in => stateNext.pulse.DATAB
+b_in => Selector1.IN2
+b_out <= b_out.DB_MAX_OUTPUT_PORT_TYPE
+clk => state~1.DATAIN
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+
+
+|Lab3_VO_Thomas|buttonShaper:p1BS
+b_in => Selector0.IN1
+b_in => stateNext.pulse.DATAB
+b_in => Selector1.IN2
+b_out <= b_out.DB_MAX_OUTPUT_PORT_TYPE
+clk => state~1.DATAIN
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+
+
+|Lab3_VO_Thomas|LoadRegister:p1LR
+D_in[0] => D_out.DATAB
+D_in[1] => D_out.DATAB
+D_in[2] => D_out.DATAB
+D_in[3] => D_out.DATAB
+D_out[0] <= D_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => D_out[0]~reg0.CLK
+clk => D_out[1]~reg0.CLK
+clk => D_out[2]~reg0.CLK
+clk => D_out[3]~reg0.CLK
+rst => D_out.OUTPUTSELECT
+rst => D_out.OUTPUTSELECT
+rst => D_out.OUTPUTSELECT
+rst => D_out.OUTPUTSELECT
+Load => D_out.OUTPUTSELECT
+Load => D_out.OUTPUTSELECT
+Load => D_out.OUTPUTSELECT
+Load => D_out.OUTPUTSELECT
+
+
+|Lab3_VO_Thomas|rng:myrng
+rng_gen => inv_in.IN1
+clk => clk.IN1
+rst => rst.IN1
+random_num[0] <= counter:myRNG.port3
+random_num[1] <= counter:myRNG.port3
+random_num[2] <= counter:myRNG.port3
+random_num[3] <= counter:myRNG.port3
+
+
+|Lab3_VO_Thomas|rng:myrng|counter:myRNG
+count => c_out.OUTPUTSELECT
+count => c_out.OUTPUTSELECT
+count => c_out.OUTPUTSELECT
+count => c_out.OUTPUTSELECT
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+rst => c_out.OUTPUTSELECT
+rst => c_out.OUTPUTSELECT
+rst => c_out.OUTPUTSELECT
+rst => c_out.OUTPUTSELECT
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer
+clk => clk.IN3
+rst => rst.IN3
+timer_enable => timer_enable.IN1
+reconfig => reconfig.IN2
+ones[0] <= dt:OnesPlace.port7
+ones[1] <= dt:OnesPlace.port7
+ones[2] <= dt:OnesPlace.port7
+ones[3] <= dt:OnesPlace.port7
+tens[0] <= dt:TensPlace.port7
+tens[1] <= dt:TensPlace.port7
+tens[2] <= dt:TensPlace.port7
+tens[3] <= dt:TensPlace.port7
+timeout <= dt:OnesPlace.port6
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s
+clk => clk.IN3
+rst => rst.IN3
+enable => enable.IN3
+one_sec_timeout <= count_to_10:count_1s_inst.port4
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst
+clk => one_ms_timeout~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => one_ms_timeout.OUTPUTSELECT
+enable => one_ms_timeout.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+one_ms_timeout <= one_ms_timeout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst
+clk => timeout~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => timeout.OUTPUTSELECT
+enable => timeout.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+in => timeout.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+timeout <= timeout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst
+clk => timeout~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => timeout.OUTPUTSELECT
+enable => timeout.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+in => timeout.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+in => count.OUTPUTSELECT
+timeout <= timeout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:OnesPlace
+clk => nb_dn~reg0.CLK
+clk => b_up~reg0.CLK
+clk => num[0]~reg0.CLK
+clk => num[1]~reg0.CLK
+clk => num[2]~reg0.CLK
+clk => num[3]~reg0.CLK
+rst => num.OUTPUTSELECT
+rst => num.OUTPUTSELECT
+rst => num.OUTPUTSELECT
+rst => num.OUTPUTSELECT
+rst => b_up.OUTPUTSELECT
+rst => nb_dn.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => b_up.OUTPUTSELECT
+reconfig => nb_dn.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => b_up.OUTPUTSELECT
+b_dn => nb_dn.OUTPUTSELECT
+nb_up => always0.IN1
+nb_up => always0.IN1
+nb_up => always0.IN1
+b_up <= b_up~reg0.DB_MAX_OUTPUT_PORT_TYPE
+nb_dn <= nb_dn~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[0] <= num[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[1] <= num[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[2] <= num[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[3] <= num[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:TensPlace
+clk => nb_dn~reg0.CLK
+clk => b_up~reg0.CLK
+clk => num[0]~reg0.CLK
+clk => num[1]~reg0.CLK
+clk => num[2]~reg0.CLK
+clk => num[3]~reg0.CLK
+rst => num.OUTPUTSELECT
+rst => num.OUTPUTSELECT
+rst => num.OUTPUTSELECT
+rst => num.OUTPUTSELECT
+rst => b_up.OUTPUTSELECT
+rst => nb_dn.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => num.OUTPUTSELECT
+reconfig => b_up.OUTPUTSELECT
+reconfig => nb_dn.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => num.OUTPUTSELECT
+b_dn => b_up.OUTPUTSELECT
+b_dn => nb_dn.OUTPUTSELECT
+nb_up => always0.IN1
+nb_up => always0.IN1
+nb_up => always0.IN1
+b_up <= b_up~reg0.DB_MAX_OUTPUT_PORT_TYPE
+nb_dn <= nb_dn~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[0] <= num[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[1] <= num[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[2] <= num[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num[3] <= num[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|Adder:myAdder
+num1[0] => Add0.IN4
+num1[1] => Add0.IN3
+num1[2] => Add0.IN2
+num1[3] => Add0.IN1
+num2[0] => Add0.IN8
+num2[1] => Add0.IN7
+num2[2] => Add0.IN6
+num2[3] => Add0.IN5
+out[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|Is15:verify
+is15_in[0] => Equal0.IN3
+is15_in[1] => Equal0.IN2
+is15_in[2] => Equal0.IN1
+is15_in[3] => Equal0.IN0
+led_match_on <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+led_match_off <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|score:myScore
+clk => tens[0]~reg0.CLK
+clk => tens[1]~reg0.CLK
+clk => tens[2]~reg0.CLK
+clk => tens[3]~reg0.CLK
+clk => ones[0]~reg0.CLK
+clk => ones[1]~reg0.CLK
+clk => ones[2]~reg0.CLK
+clk => ones[3]~reg0.CLK
+rst => ones.OUTPUTSELECT
+rst => ones.OUTPUTSELECT
+rst => ones.OUTPUTSELECT
+rst => ones.OUTPUTSELECT
+rst => tens.OUTPUTSELECT
+rst => tens.OUTPUTSELECT
+rst => tens.OUTPUTSELECT
+rst => tens.OUTPUTSELECT
+win => ones.OUTPUTSELECT
+win => ones.OUTPUTSELECT
+win => ones.OUTPUTSELECT
+win => ones.OUTPUTSELECT
+win => tens.OUTPUTSELECT
+win => tens.OUTPUTSELECT
+win => tens.OUTPUTSELECT
+win => tens.OUTPUTSELECT
+ones[0] <= ones[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[1] <= ones[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[2] <= ones[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[3] <= ones[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[0] <= tens[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[1] <= tens[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[2] <= tens[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[3] <= tens[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|mux3to2:myMUX
+sum[0] => out.DATAA
+sum[1] => out.DATAA
+sum[2] => out.DATAA
+sum[3] => out.DATAA
+score_ones[0] => out.DATAB
+score_ones[1] => out.DATAB
+score_ones[2] => out.DATAB
+score_ones[3] => out.DATAB
+score_tens[0] => tens_out[0]$latch.DATAIN
+score_tens[1] => tens_out[1]$latch.DATAIN
+score_tens[2] => tens_out[2]$latch.DATAIN
+score_tens[3] => tens_out[3]$latch.DATAIN
+gameover_s => out.OUTPUTSELECT
+gameover_s => out.OUTPUTSELECT
+gameover_s => out.OUTPUTSELECT
+gameover_s => out.OUTPUTSELECT
+gameover_s => tens_out[0]$latch.LATCH_ENABLE
+gameover_s => tens_out[1]$latch.LATCH_ENABLE
+gameover_s => tens_out[2]$latch.LATCH_ENABLE
+gameover_s => tens_out[3]$latch.LATCH_ENABLE
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+tens_out[0] <= tens_out[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+tens_out[1] <= tens_out[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+tens_out[2] <= tens_out[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+tens_out[3] <= tens_out[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|sevenSegDecoder:Dp1
+decode_in[0] => Decoder0.IN3
+decode_in[1] => Decoder0.IN2
+decode_in[2] => Decoder0.IN1
+decode_in[3] => Decoder0.IN0
+decode_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|sevenSegDecoder:DRNG
+decode_in[0] => Decoder0.IN3
+decode_in[1] => Decoder0.IN2
+decode_in[2] => Decoder0.IN1
+decode_in[3] => Decoder0.IN0
+decode_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|sevenSegDecoder:DSum_ScoreOnes
+decode_in[0] => Decoder0.IN3
+decode_in[1] => Decoder0.IN2
+decode_in[2] => Decoder0.IN1
+decode_in[3] => Decoder0.IN0
+decode_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|sevenSegDecoder:DTens
+decode_in[0] => Decoder0.IN3
+decode_in[1] => Decoder0.IN2
+decode_in[2] => Decoder0.IN1
+decode_in[3] => Decoder0.IN0
+decode_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|sevenSegDecoder:DTimerOnes
+decode_in[0] => Decoder0.IN3
+decode_in[1] => Decoder0.IN2
+decode_in[2] => Decoder0.IN1
+decode_in[3] => Decoder0.IN0
+decode_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|sevenSegDecoder:DTimerTens
+decode_in[0] => Decoder0.IN3
+decode_in[1] => Decoder0.IN2
+decode_in[2] => Decoder0.IN1
+decode_in[3] => Decoder0.IN0
+decode_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+decode_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab3_VO_Thomas|Access:myAC
+PassDigit[0] => Equal0.IN1
+PassDigit[0] => Equal1.IN3
+PassDigit[0] => Equal2.IN3
+PassDigit[0] => Equal3.IN0
+PassDigit[1] => Equal0.IN3
+PassDigit[1] => Equal1.IN2
+PassDigit[1] => Equal2.IN1
+PassDigit[1] => Equal3.IN3
+PassDigit[2] => Equal0.IN2
+PassDigit[2] => Equal1.IN1
+PassDigit[2] => Equal2.IN0
+PassDigit[2] => Equal3.IN2
+PassDigit[3] => Equal0.IN0
+PassDigit[3] => Equal1.IN0
+PassDigit[3] => Equal2.IN2
+PassDigit[3] => Equal3.IN1
+PassEnter => Flag.OUTPUTSELECT
+PassEnter => Flag.OUTPUTSELECT
+PassEnter => Flag.OUTPUTSELECT
+PassEnter => Flag.OUTPUTSELECT
+PassEnter => timer_enable.OUTPUTSELECT
+PassEnter => Selector6.IN4
+PassEnter => Selector7.IN4
+PassEnter => Selector8.IN4
+PassEnter => Selector9.IN3
+PassEnter => Selector12.IN3
+PassEnter => Selector10.IN3
+PassEnter => Selector13.IN2
+PassEnter => Selector11.IN3
+PassEnter => Selector8.IN2
+PassEnter => Selector7.IN2
+PassEnter => Selector6.IN2
+PassEnter => Selector5.IN3
+Load_P1_In => Selector1.IN3
+rng_button => Selector2.IN4
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => state.OUTPUTSELECT
+timeout => timer_enable.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => Flag.OUTPUTSELECT
+rst => Load_P1_Out.OUTPUTSELECT
+rst => rng_gen.OUTPUTSELECT
+rst => timer_enable.OUTPUTSELECT
+rst => reconfig.OUTPUTSELECT
+rst => logoutLED.OUTPUTSELECT
+rst => loginLED.OUTPUTSELECT
+rst => gameover.OUTPUTSELECT
+clk => gameover~reg0.CLK
+clk => loginLED~reg0.CLK
+clk => logoutLED~reg0.CLK
+clk => reconfig~reg0.CLK
+clk => timer_enable~reg0.CLK
+clk => rng_gen~reg0.CLK
+clk => Load_P1_Out~reg0.CLK
+clk => Flag.CLK
+clk => state~10.DATAIN
+Load_P1_Out <= Load_P1_Out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rng_gen <= rng_gen~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_enable <= timer_enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reconfig <= reconfig~reg0.DB_MAX_OUTPUT_PORT_TYPE
+logoutLED <= logoutLED~reg0.DB_MAX_OUTPUT_PORT_TYPE
+loginLED <= loginLED~reg0.DB_MAX_OUTPUT_PORT_TYPE
+gameover <= gameover~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

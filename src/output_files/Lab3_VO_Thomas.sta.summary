@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'Access:myAC|gameover'
+Slack : -4.412
+TNS   : -17.072
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -3.599
+TNS   : -121.666
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Access:myAC|gameover'
+Slack : 3.462
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.538
+TNS   : -60.755
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Access:myAC|gameover'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'Access:myAC|gameover'
+Slack : -4.529
+TNS   : -17.316
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -3.563
+TNS   : -120.575
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Access:myAC|gameover'
+Slack : 3.452
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.538
+TNS   : -61.662
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Access:myAC|gameover'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'Access:myAC|gameover'
+Slack : -1.942
+TNS   : -7.543
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -1.656
+TNS   : -23.968
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'Access:myAC|gameover'
+Slack : 2.109
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.093
+TNS   : -6.803
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Access:myAC|gameover'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'Access:myAC|gameover'
+Slack : -1.870
+TNS   : -7.226
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -1.368
+TNS   : -16.377
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'Access:myAC|gameover'
+Slack : 2.062
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.095
+TNS   : -7.100
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Access:myAC|gameover'
+Slack : 0.479
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,50 @@
+{F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/count_to_100.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/count_to_100.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module count_to_100
+
+Top level modules:
+	count_to_100
+
+} {} {}} {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/count_to_10.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/count_to_10.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module count_to_10
+
+Top level modules:
+	count_to_10
+
+} {} {}} {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/dt.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/dt.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dt
+
+Top level modules:
+	dt
+
+} {} {}} {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/timer_1ms.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/timer_1ms.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module timer_1ms
+
+Top level modules:
+	timer_1ms
+
+} {} {}} {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/digitTimer_testbench.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/digitTimer_testbench.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module digitTimer_testbench
+
+Top level modules:
+	digitTimer_testbench
+
+} {} {}} {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/digitTimer.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/digitTimer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module digitTimer
+
+Top level modules:
+	digitTimer
+
+} {} {}} {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/oneSecTimer.v} {1 {vlog -work work -stats=none {F:/Advanced Digital Design/Lab3_VO_Thomas/sim_digitTimer/oneSecTimer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module oneSecTimer
+
+Top level modules:
+	oneSecTimer
+
+} {} {}}

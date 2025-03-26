@@ -1,0 +1,131 @@
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 19:33:36 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'timer_1ms_inst'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /oneSecTimer_testbench/DUT/timer_1ms_inst File: F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v Line: 11
+# ** Warning: (vsim-3722) F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v(11): [TFMPC] - Missing connection for port 'one_ms_timeout'.
+# ** Error (suppressible): (vsim-3053) Illegal output or inout port connection for port 'timeout'.
+#    Time: 0 ps  Iteration: 0  Instance: /oneSecTimer_testbench/DUT/count_1s_inst File: F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v Line: 13
+# Error loading design
+# End time: 19:33:36 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 4
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 19:36:47 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+# ** Error (suppressible): (vsim-3053) Illegal output or inout port connection for port 'timeout'.
+#    Time: 0 ps  Iteration: 0  Instance: /oneSecTimer_testbench/DUT/count_1s_inst File: F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v Line: 13
+# Error loading design
+# End time: 19:36:47 on Mar 11,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 19:37:21 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+add wave -r /*
+run 1000ns
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# End time: 19:42:50 on Mar 11,2025, Elapsed time: 0:05:29
+# Errors: 0, Warnings: 3
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 19:42:50 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+add wave -r /*
+run 1000ns
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# End time: 20:22:03 on Mar 11,2025, Elapsed time: 0:39:13
+# Errors: 0, Warnings: 2
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 20:22:03 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+add wave -r /*
+run 500ns
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# End time: 20:29:47 on Mar 11,2025, Elapsed time: 0:07:44
+# Errors: 0, Warnings: 2
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 20:29:47 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+add wave -r /*
+run 1000ns
+# Compile of timer_1ms.v was successful.
+# Compile of count_to_10.v was successful.
+# Compile of count_to_100.v was successful.
+# Compile of oneSecTimer.v was successful.
+# Compile of oneSecTimer_testbench.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.oneSecTimer_testbench
+# End time: 20:34:10 on Mar 11,2025, Elapsed time: 0:04:23
+# Errors: 0, Warnings: 2
+# vsim -gui work.oneSecTimer_testbench 
+# Start time: 20:34:10 on Mar 11,2025
+# Loading work.oneSecTimer_testbench
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+add wave -r /*
+run 1000ns
+# End time: 20:35:39 on Mar 11,2025, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 1

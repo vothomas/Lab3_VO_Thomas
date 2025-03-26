@@ -1,0 +1,24 @@
+
+State Machine - |Lab3_VO_Thomas|Access:myAC|state
+Name state.gameplay state.wait_gameStart state.reconfig_timer state.verify state.digit4 state.digit3 state.digit2 state.digit1 state.gameOver 
+state.digit1 0 0 0 0 0 0 0 0 0 
+state.digit2 0 0 0 0 0 0 1 1 0 
+state.digit3 0 0 0 0 0 1 0 1 0 
+state.digit4 0 0 0 0 1 0 0 1 0 
+state.verify 0 0 0 1 0 0 0 1 0 
+state.reconfig_timer 0 0 1 0 0 0 0 1 0 
+state.wait_gameStart 0 1 0 0 0 0 0 1 0 
+state.gameplay 1 0 0 0 0 0 0 1 0 
+state.gameOver 0 0 0 0 0 0 0 1 1 
+
+State Machine - |Lab3_VO_Thomas|buttonShaper:p1BS|state
+Name state.init state.wait_s state.pulse 
+state.init 0 0 0 
+state.pulse 1 0 1 
+state.wait_s 1 1 0 
+
+State Machine - |Lab3_VO_Thomas|buttonShaper:passwordBS|state
+Name state.init state.wait_s state.pulse 
+state.init 0 0 0 
+state.pulse 1 0 1 
+state.wait_s 1 1 0 

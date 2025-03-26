@@ -1,0 +1,128 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+vcount_to_10
+Z0 !s110 1741743241
+!i10b 1
+!s100 jz2XYeRVeGVB__>Eb8]Ni3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?h1Jdf@Y^WMIcThYfRY:O0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dF:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer
+w1741742943
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_10.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_10.v
+!i122 45
+L0 1 27
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1741743241.000000
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_10.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_10.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vcount_to_100
+R0
+!i10b 1
+!s100 >O>dYPmN_f69E>:VbUH@j1
+R1
+INZPcI5IX:RNb:Q]RkY]PE3
+R2
+R3
+w1741742975
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_100.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_100.v
+!i122 46
+L0 2 27
+R4
+r1
+!s85 0
+31
+R5
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_100.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/count_to_100.v|
+!i113 1
+R6
+R7
+voneSecTimer
+R0
+!i10b 1
+!s100 80dUmo7zm^Ia7Rdl24BI`3
+R1
+IYM70]01RaKXaCR8cG:A<z2
+R2
+R3
+w1741739832
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v
+!i122 47
+L0 1 15
+R4
+r1
+!s85 0
+31
+R5
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer.v|
+!i113 1
+R6
+R7
+none@sec@timer
+voneSecTimer_testbench
+R0
+!i10b 1
+!s100 TJB_n5kImgd1P2QgC^1IK3
+R1
+I<BIhZ73gR@ILHPQGNQLDL1
+R2
+R3
+w1741743236
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer_testbench.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer_testbench.v
+!i122 48
+L0 2 25
+R4
+r1
+!s85 0
+31
+R5
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer_testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/oneSecTimer_testbench.v|
+!i113 1
+R6
+R7
+none@sec@timer_testbench
+vtimer_1ms
+R0
+!i10b 1
+!s100 j]:[bKzDY3Q[LdB08EB4j1
+R1
+INlfQPd56C4BfYc@oRD==>0
+R2
+R3
+w1741742766
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/timer_1ms.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/timer_1ms.v
+!i122 44
+L0 1 26
+R4
+r1
+!s85 0
+31
+R5
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/timer_1ms.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_1secTimer/timer_1ms.v|
+!i113 1
+R6
+R7

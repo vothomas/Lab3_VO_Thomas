@@ -1,0 +1,15 @@
+vsim -gui work.digitTimer_testbench
+# vsim -gui work.digitTimer_testbench 
+# Start time: 14:36:33 on Mar 16,2025
+# Loading work.digitTimer_testbench
+# Loading work.digitTimer
+# Loading work.oneSecTimer
+# Loading work.timer_1ms
+# Loading work.count_to_100
+# Loading work.count_to_10
+# Loading work.dt
+add wave -r /*
+run 1000ns
+run 5000ns
+# End time: 14:37:42 on Mar 16,2025, Elapsed time: 0:01:09
+# Errors: 0, Warnings: 1

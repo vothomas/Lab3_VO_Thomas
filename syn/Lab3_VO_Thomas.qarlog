@@ -1,0 +1,32 @@
+Quartus Prime Archive log --	F:/Advanced Digital Design/Lab3_VO_Thomas/syn/Lab3_VO_Thomas.qarlog
+
+Archive:	F:/Advanced Digital Design/Lab3_VO_Thomas/syn/Lab3_VO_Thomas.qar
+Date:		Sun Mar 16 00:22:15 2025
+Quartus Prime		23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+	=========== Files Selected: ===========
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/Adder.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/Is15.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/LoadRegister.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/buttonShaper.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/dt.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng_latch.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/sevenSegDecoder.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v
+F:/Advanced Digital Design/Lab3_VO_Thomas/syn/Lab3_VO_Thomas.qpf
+F:/Advanced Digital Design/Lab3_VO_Thomas/syn/Lab3_VO_Thomas.qsf
+c:/intelfpga_lite/23.1std/quartus/bin64/assignment_defaults.qdf
+	======= Total: 21 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

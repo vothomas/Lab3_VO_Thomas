@@ -1,0 +1,637 @@
+Analysis & Synthesis report for Lab3_VO_Thomas
+Sat Mar 15 23:53:18 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Lab3_VO_Thomas|Access:myAC|state
+  9. State Machine - |Lab3_VO_Thomas|buttonShaper:p1BS|state
+ 10. State Machine - |Lab3_VO_Thomas|buttonShaper:passwordBS|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: buttonShaper:passwordBS
+ 15. Parameter Settings for User Entity Instance: buttonShaper:p1BS
+ 16. Parameter Settings for User Entity Instance: Access:myAC
+ 17. Parameter Settings for Inferred Entity Instance: score:myScore|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: score:myScore|lpm_divide:Mod0
+ 19. Port Connectivity Checks: "digitTimer:twoDigitTimer|dt:TensPlace"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Mar 15 23:53:18 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; Lab3_VO_Thomas                                 ;
+; Top-level Entity Name           ; Lab3_VO_Thomas                                 ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 83                                             ;
+; Total pins                      ; 59                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; Lab3_VO_Thomas     ; Lab3_VO_Thomas     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; ../src/rng_latch.v               ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng_latch.v                     ;         ;
+; ../src/timer_1ms.v               ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v                     ;         ;
+; ../src/sevenSegDecoder.v         ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/sevenSegDecoder.v               ;         ;
+; ../src/score.v                   ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v                         ;         ;
+; ../src/rng.v                     ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v                           ;         ;
+; ../src/oneSecTimer.v             ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v                   ;         ;
+; ../src/mux3to2.v                 ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v                       ;         ;
+; ../src/LoadRegister.v            ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/LoadRegister.v                  ;         ;
+; ../src/Lab3_VO_Thomas.v          ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v                ;         ;
+; ../src/Is15.v                    ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Is15.v                          ;         ;
+; ../src/dt.v                      ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/dt.v                            ;         ;
+; ../src/digitTimer.v              ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v                    ;         ;
+; ../src/counter.v                 ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v                       ;         ;
+; ../src/count_to_100.v            ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v                  ;         ;
+; ../src/count_to_10.v             ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v                   ;         ;
+; ../src/buttonShaper.v            ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/buttonShaper.v                  ;         ;
+; ../src/Adder.v                   ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Adder.v                         ;         ;
+; ../src/Access.v                  ; yes             ; User Verilog HDL File        ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v                        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
+; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/lpm_divide_4am.tdf           ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/sign_div_unsign_akh.tdf      ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/alt_u_div_qse.tdf            ;         ;
+; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/lpm_divide_72m.tdf           ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 134       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 243       ;
+;     -- 7 input functions                    ; 3         ;
+;     -- 6 input functions                    ; 20        ;
+;     -- 5 input functions                    ; 19        ;
+;     -- 4 input functions                    ; 57        ;
+;     -- <=3 input functions                  ; 144       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 83        ;
+;                                             ;           ;
+; I/O pins                                    ; 59        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 83        ;
+; Total fan-out                               ; 1164      ;
+; Average fan-out                             ; 2.62      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Lab3_VO_Thomas                           ; 243 (0)             ; 83 (0)                    ; 0                 ; 0          ; 59   ; 0            ; |Lab3_VO_Thomas                                                                                                               ; Lab3_VO_Thomas      ; work         ;
+;    |Access:myAC|                          ; 40 (40)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|Access:myAC                                                                                                   ; Access              ; work         ;
+;    |Adder:myAdder|                        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|Adder:myAdder                                                                                                 ; Adder               ; work         ;
+;    |Is15:verify|                          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|Is15:verify                                                                                                   ; Is15                ; work         ;
+;    |LoadRegister:p1LR|                    ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|LoadRegister:p1LR                                                                                             ; LoadRegister        ; work         ;
+;    |buttonShaper:p1BS|                    ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|buttonShaper:p1BS                                                                                             ; buttonShaper        ; work         ;
+;    |buttonShaper:passwordBS|              ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|buttonShaper:passwordBS                                                                                       ; buttonShaper        ; work         ;
+;    |digitTimer:twoDigitTimer|             ; 54 (0)              ; 41 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer                                                                                      ; digitTimer          ; work         ;
+;       |dt:OnesPlace|                      ; 9 (9)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:OnesPlace                                                                         ; dt                  ; work         ;
+;       |dt:TensPlace|                      ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:TensPlace                                                                         ; dt                  ; work         ;
+;       |oneSecTimer:my1s|                  ; 39 (0)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s                                                                     ; oneSecTimer         ; work         ;
+;          |count_to_100:count_100ms_inst|  ; 11 (11)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst                                       ; count_to_100        ; work         ;
+;          |count_to_10:count_1s_inst|      ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst                                           ; count_to_10         ; work         ;
+;          |timer_1ms:timer_1ms_inst|       ; 22 (22)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst                                            ; timer_1ms           ; work         ;
+;    |mux3to2:myMUX|                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|mux3to2:myMUX                                                                                                 ; mux3to2             ; work         ;
+;    |rng:myrng|                            ; 4 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|rng:myrng                                                                                                     ; rng                 ; work         ;
+;       |counter:myRNG|                     ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|rng:myrng|counter:myRNG                                                                                       ; counter             ; work         ;
+;    |rng_latch:my_rng_latch|               ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|rng_latch:my_rng_latch                                                                                        ; rng_latch           ; work         ;
+;    |score:myScore|                        ; 76 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore                                                                                                 ; score               ; work         ;
+;       |lpm_divide:Div0|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4am:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;       |lpm_divide:Mod0|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_72m:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                   ; lpm_divide_72m      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;    |sevenSegDecoder:DRNG|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DRNG                                                                                          ; sevenSegDecoder     ; work         ;
+;    |sevenSegDecoder:DSum_ScoreOnes|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DSum_ScoreOnes                                                                                ; sevenSegDecoder     ; work         ;
+;    |sevenSegDecoder:DTens|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DTens                                                                                         ; sevenSegDecoder     ; work         ;
+;    |sevenSegDecoder:DTimerOnes|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DTimerOnes                                                                                    ; sevenSegDecoder     ; work         ;
+;    |sevenSegDecoder:DTimerTens|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DTimerTens                                                                                    ; sevenSegDecoder     ; work         ;
+;    |sevenSegDecoder:Dp1|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:Dp1                                                                                           ; sevenSegDecoder     ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Lab3_VO_Thomas|Access:myAC|state                                                                                                                               ;
++----------------------+----------------+----------------------+----------------------+--------------+--------------+--------------+--------------+--------------+----------------+
+; Name                 ; state.gameplay ; state.wait_gameStart ; state.reconfig_timer ; state.verify ; state.digit4 ; state.digit3 ; state.digit2 ; state.digit1 ; state.gameOver ;
++----------------------+----------------+----------------------+----------------------+--------------+--------------+--------------+--------------+--------------+----------------+
+; state.digit1         ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0              ;
+; state.digit2         ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 1            ; 1            ; 0              ;
+; state.digit3         ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 1            ; 0            ; 1            ; 0              ;
+; state.digit4         ; 0              ; 0                    ; 0                    ; 0            ; 1            ; 0            ; 0            ; 1            ; 0              ;
+; state.verify         ; 0              ; 0                    ; 0                    ; 1            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.reconfig_timer ; 0              ; 0                    ; 1                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.wait_gameStart ; 0              ; 1                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.gameplay       ; 1              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.gameOver       ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 1              ;
++----------------------+----------------+----------------------+----------------------+--------------+--------------+--------------+--------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------+
+; State Machine - |Lab3_VO_Thomas|buttonShaper:p1BS|state ;
++--------------+------------+--------------+--------------+
+; Name         ; state.init ; state.wait_s ; state.pulse  ;
++--------------+------------+--------------+--------------+
+; state.init   ; 0          ; 0            ; 0            ;
+; state.pulse  ; 1          ; 0            ; 1            ;
+; state.wait_s ; 1          ; 1            ; 0            ;
++--------------+------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |Lab3_VO_Thomas|buttonShaper:passwordBS|state ;
++--------------+------------+--------------+--------------------+
+; Name         ; state.init ; state.wait_s ; state.pulse        ;
++--------------+------------+--------------+--------------------+
+; state.init   ; 0          ; 0            ; 0                  ;
+; state.pulse  ; 1          ; 0            ; 1                  ;
+; state.wait_s ; 1          ; 1            ; 0                  ;
++--------------+------------+--------------+--------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; Access:myAC|state~11                  ; Lost fanout        ;
+; Access:myAC|state~12                  ; Lost fanout        ;
+; Access:myAC|state~13                  ; Lost fanout        ;
+; buttonShaper:p1BS|state~4             ; Lost fanout        ;
+; buttonShaper:passwordBS|state~4       ; Lost fanout        ;
+; buttonShaper:p1BS|state.wait_s        ; Lost fanout        ;
+; buttonShaper:passwordBS|state.wait_s  ; Lost fanout        ;
+; Total Number of Removed Registers = 7 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 83    ;
+; Number of registers using Synchronous Clear  ; 50    ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab3_VO_Thomas|rng_latch:my_rng_latch|stable_rng_value[0]                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab3_VO_Thomas|LoadRegister:p1LR|D_out[2]                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst|count[2]     ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst|count[6] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst|count[4]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:TensPlace|num[2]                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:OnesPlace|num[2]                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:OnesPlace|num[3]                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buttonShaper:passwordBS ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; init           ; 0     ; Signed Integer                              ;
+; pulse          ; 1     ; Signed Integer                              ;
+; wait_s         ; 2     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buttonShaper:p1BS ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; init           ; 0     ; Signed Integer                        ;
+; pulse          ; 1     ; Signed Integer                        ;
+; wait_s         ; 2     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Access:myAC ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; digit1         ; 0     ; Signed Integer                  ;
+; digit2         ; 1     ; Signed Integer                  ;
+; digit3         ; 2     ; Signed Integer                  ;
+; digit4         ; 3     ; Signed Integer                  ;
+; verify         ; 4     ; Signed Integer                  ;
+; reconfig_timer ; 5     ; Signed Integer                  ;
+; wait_gameStart ; 6     ; Signed Integer                  ;
+; gameplay       ; 7     ; Signed Integer                  ;
+; gameOver       ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: score:myScore|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: score:myScore|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitTimer:twoDigitTimer|dt:TensPlace"                                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; nb_up ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b_up  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 83                          ;
+;     ENA               ; 21                          ;
+;     ENA SCLR          ; 27                          ;
+;     SCLR              ; 23                          ;
+;     SLD               ; 2                           ;
+;     plain             ; 10                          ;
+; arriav_lcell_comb     ; 250                         ;
+;     arith             ; 76                          ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 36                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 4                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 161                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 53                          ;
+;         5 data inputs ; 19                          ;
+;         6 data inputs ; 20                          ;
+;     shared            ; 10                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 8                           ;
+; boundary_port         ; 59                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.50                        ;
+; Average LUT depth     ; 4.12                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Sat Mar 15 23:53:12 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab3_VO_Thomas -c Lab3_VO_Thomas
+Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/rng_latch.v
+    Info (12023): Found entity 1: rng_latch File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng_latch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/timer_1ms.v
+    Info (12023): Found entity 1: timer_1ms File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/sevensegdecoder.v
+    Info (12023): Found entity 1: sevenSegDecoder File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/sevenSegDecoder.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/score.v
+    Info (12023): Found entity 1: score File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/rng.v
+    Info (12023): Found entity 1: rng File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/onesectimer.v
+    Info (12023): Found entity 1: oneSecTimer File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/mux3to2.v
+    Info (12023): Found entity 1: mux3to2 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/loadregister.v
+    Info (12023): Found entity 1: LoadRegister File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/LoadRegister.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/lab3_vo_thomas.v
+    Info (12023): Found entity 1: Lab3_VO_Thomas File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/is15.v
+    Info (12023): Found entity 1: Is15 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Is15.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/dt.v
+    Info (12023): Found entity 1: dt File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/dt.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/digittimer.v
+    Info (12023): Found entity 1: digitTimer File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/counter.v
+    Info (12023): Found entity 1: counter File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/count_to_100.v
+    Info (12023): Found entity 1: count_to_100 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/count_to_10.v
+    Info (12023): Found entity 1: count_to_10 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/buttonshaper.v
+    Info (12023): Found entity 1: buttonShaper File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/buttonShaper.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/adder.v
+    Info (12023): Found entity 1: Adder File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Adder.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /advanced digital design/lab3_vo_thomas/src/access.v
+    Info (12023): Found entity 1: Access File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v Line: 6
+Info (12127): Elaborating entity "Lab3_VO_Thomas" for the top level hierarchy
+Info (12128): Elaborating entity "buttonShaper" for hierarchy "buttonShaper:passwordBS" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 16
+Info (12128): Elaborating entity "LoadRegister" for hierarchy "LoadRegister:p1LR" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 22
+Info (12128): Elaborating entity "rng" for hierarchy "rng:myrng" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 27
+Info (12128): Elaborating entity "counter" for hierarchy "rng:myrng|counter:myRNG" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v Line: 9
+Warning (10230): Verilog HDL assignment warning at counter.v(14): truncated value with size 32 to match size of target (4) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v Line: 14
+Info (12128): Elaborating entity "rng_latch" for hierarchy "rng_latch:my_rng_latch" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 30
+Info (12128): Elaborating entity "digitTimer" for hierarchy "digitTimer:twoDigitTimer" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 35
+Info (12128): Elaborating entity "oneSecTimer" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v Line: 9
+Info (12128): Elaborating entity "timer_1ms" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 11
+Warning (10230): Verilog HDL assignment warning at timer_1ms.v(21): truncated value with size 32 to match size of target (16) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v Line: 21
+Info (12128): Elaborating entity "count_to_100" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 12
+Warning (10230): Verilog HDL assignment warning at count_to_100.v(22): truncated value with size 32 to match size of target (7) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v Line: 22
+Info (12128): Elaborating entity "count_to_10" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 13
+Warning (10230): Verilog HDL assignment warning at count_to_10.v(21): truncated value with size 32 to match size of target (4) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v Line: 21
+Info (12128): Elaborating entity "dt" for hierarchy "digitTimer:twoDigitTimer|dt:OnesPlace" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v Line: 11
+Info (12128): Elaborating entity "Adder" for hierarchy "Adder:myAdder" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 39
+Info (12128): Elaborating entity "Is15" for hierarchy "Is15:verify" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 44
+Info (12128): Elaborating entity "score" for hierarchy "score:myScore" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 53
+Warning (10230): Verilog HDL assignment warning at score.v(9): truncated value with size 32 to match size of target (4) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 9
+Warning (10230): Verilog HDL assignment warning at score.v(12): truncated value with size 32 to match size of target (4) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 12
+Info (12128): Elaborating entity "mux3to2" for hierarchy "mux3to2:myMUX" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 58
+Info (12128): Elaborating entity "sevenSegDecoder" for hierarchy "sevenSegDecoder:Dp1" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 61
+Info (12128): Elaborating entity "Access" for hierarchy "Access:myAC" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 71
+Warning (10036): Verilog HDL or VHDL warning at Access.v(19): object "rng_button_prev" assigned a value but never read File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v Line: 19
+Warning (10230): Verilog HDL assignment warning at Access.v(134): truncated value with size 32 to match size of target (7) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v Line: 134
+Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "score:myScore|Div0" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 9
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "score:myScore|Mod0" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 12
+Info (12130): Elaborated megafunction instantiation "score:myScore|lpm_divide:Div0" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 9
+Info (12133): Instantiated megafunction "score:myScore|lpm_divide:Div0" with the following parameter: File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 9
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
+    Info (12023): Found entity 1: lpm_divide_4am File: F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/lpm_divide_4am.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/sign_div_unsign_akh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
+    Info (12023): Found entity 1: alt_u_div_qse File: F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/alt_u_div_qse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "score:myScore|lpm_divide:Mod0" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 12
+Info (12133): Instantiated megafunction "score:myScore|lpm_divide:Mod0" with the following parameter: File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 12
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
+    Info (12023): Found entity 1: lpm_divide_72m File: F:/Advanced Digital Design/Lab3_VO_Thomas/syn/db/lpm_divide_72m.tdf Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file F:/Advanced Digital Design/Lab3_VO_Thomas/syn/output_files/Lab3_VO_Thomas.map.smsg
+Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 304 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 245 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Sat Mar 15 23:53:18 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Advanced Digital Design/Lab3_VO_Thomas/syn/output_files/Lab3_VO_Thomas.map.smsg.
+
+

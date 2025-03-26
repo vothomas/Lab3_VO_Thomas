@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+vcounter
+Z0 !s110 1741674706
+!i10b 1
+!s100 oJbQ7zN`KdLGI8]`3:j0N2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>:z6V^DJ5>c1L5?PK0moB1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dF:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng
+w1741673764
+8F:\Advanced Digital Design\Lab3_VO_Thomas\sim_rng\counter.v
+FF:\Advanced Digital Design\Lab3_VO_Thomas\sim_rng\counter.v
+!i122 13
+L0 1 18
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1741674706.000000
+!s107 F:\Advanced Digital Design\Lab3_VO_Thomas\sim_rng\counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:\Advanced Digital Design\Lab3_VO_Thomas\sim_rng\counter.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vrng
+R0
+!i10b 1
+!s100 7GdPCKBfAOAZ;7PBfah]N2
+R1
+IfURnf:bIjGBj6:C@9bnln2
+R2
+R3
+w1741674154
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng.v
+!i122 12
+L0 1 10
+R4
+r1
+!s85 0
+31
+R5
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng.v|
+!i113 1
+R6
+R7
+vrng_testbench
+R0
+!i10b 1
+!s100 z^M8TZ[PY=ULd`0edV5VB1
+R1
+ImgVUG@B<CiT:h>;MP5Pbj3
+R2
+R3
+w1741674701
+8F:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng_testbench.v
+FF:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng_testbench.v
+!i122 14
+L0 2 40
+R4
+r1
+!s85 0
+31
+R5
+!s107 F:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng_testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/Advanced Digital Design/Lab3_VO_Thomas/sim_rng/rng_testbench.v|
+!i113 1
+R6
+R7

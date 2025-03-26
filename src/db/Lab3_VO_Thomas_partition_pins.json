@@ -1,0 +1,173 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "timer_tens[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_tens[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_tens[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_tens[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_ones[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_ones[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_ones[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_ones[3]",
+					"strict" : false
+				},
+				{
+					"name" : "score_tens[0]",
+					"strict" : false
+				},
+				{
+					"name" : "score_tens[1]",
+					"strict" : false
+				},
+				{
+					"name" : "score_tens[2]",
+					"strict" : false
+				},
+				{
+					"name" : "score_tens[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sum_score_ones[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sum_score_ones[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sum_score_ones[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sum_score_ones[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RNG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RNG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RNG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RNG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "P1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "P1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "P1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "P1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "NmatchLED",
+					"strict" : false
+				},
+				{
+					"name" : "matchLED",
+					"strict" : false
+				},
+				{
+					"name" : "logoutLED",
+					"strict" : false
+				},
+				{
+					"name" : "logInLED",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "p1_input[0]",
+					"strict" : false
+				},
+				{
+					"name" : "p1_input[1]",
+					"strict" : false
+				},
+				{
+					"name" : "p1_input[2]",
+					"strict" : false
+				},
+				{
+					"name" : "p1_input[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rng_button",
+					"strict" : false
+				},
+				{
+					"name" : "pass_button",
+					"strict" : false
+				},
+				{
+					"name" : "pass_input[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pass_input[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pass_input[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pass_input[2]",
+					"strict" : false
+				},
+				{
+					"name" : "p1_button",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

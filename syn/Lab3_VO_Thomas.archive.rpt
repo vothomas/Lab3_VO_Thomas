@@ -1,0 +1,115 @@
+Archive Project report for Lab3_VO_Thomas
+Sun Mar 16 00:22:15 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Sun Mar 16 00:22:15 2025 ;
+; Revision Name          ; Lab3_VO_Thomas                        ;
+; Top-level Entity Name  ; Lab3_VO_Thomas                        ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory F:/Advanced Digital Design/Lab3_VO_Thomas/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'F:/Advanced Digital Design/Lab3_VO_Thomas/syn/Lab3_VO_Thomas.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'Lab3_VO_Thomas.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/23.1std/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Sun Mar 16 00:22:15 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-----------------------------------------------------------------+
+; Files Archived                                                  ;
++-----------------------------------------------------------------+
+; File Name                                                       ;
++-----------------------------------------------------------------+
+; ../src/Access.v                                                 ;
+; ../src/Adder.v                                                  ;
+; ../src/buttonShaper.v                                           ;
+; ../src/count_to_10.v                                            ;
+; ../src/count_to_100.v                                           ;
+; ../src/counter.v                                                ;
+; ../src/digitTimer.v                                             ;
+; ../src/dt.v                                                     ;
+; ../src/Is15.v                                                   ;
+; ../src/Lab3_VO_Thomas.v                                         ;
+; ../src/LoadRegister.v                                           ;
+; ../src/mux3to2.v                                                ;
+; ../src/oneSecTimer.v                                            ;
+; ../src/rng.v                                                    ;
+; ../src/rng_latch.v                                              ;
+; ../src/score.v                                                  ;
+; ../src/sevenSegDecoder.v                                        ;
+; ../src/timer_1ms.v                                              ;
+; c:/intelfpga_lite/23.1std/quartus/bin64/assignment_defaults.qdf ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v          ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Adder.v           ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/buttonShaper.v    ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v     ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v    ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v         ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v      ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/dt.v              ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Is15.v            ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v  ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/LoadRegister.v    ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v         ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v     ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v             ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng_latch.v       ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v           ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/sevenSegDecoder.v ;
+; F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v       ;
+; Lab3_VO_Thomas.qpf                                              ;
+; Lab3_VO_Thomas.qsf                                              ;
++-----------------------------------------------------------------+
+
+

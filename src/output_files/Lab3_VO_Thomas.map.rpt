@@ -1,0 +1,611 @@
+Analysis & Synthesis report for Lab3_VO_Thomas
+Sat Mar 15 13:03:02 2025
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Lab3_VO_Thomas|Access:myAC|state
+  9. State Machine - |Lab3_VO_Thomas|buttonShaper:p1BS|state
+ 10. State Machine - |Lab3_VO_Thomas|buttonShaper:passwordBS|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: buttonShaper:passwordBS
+ 16. Parameter Settings for User Entity Instance: buttonShaper:p1BS
+ 17. Parameter Settings for User Entity Instance: Access:myAC
+ 18. Port Connectivity Checks: "sevenSegDecoder:DTimerTens"
+ 19. Port Connectivity Checks: "sevenSegDecoder:DTimerOnes"
+ 20. Port Connectivity Checks: "sevenSegDecoder:DTens"
+ 21. Port Connectivity Checks: "sevenSegDecoder:DSum_ScoreOnes"
+ 22. Port Connectivity Checks: "sevenSegDecoder:DRNG"
+ 23. Port Connectivity Checks: "sevenSegDecoder:Dp1"
+ 24. Port Connectivity Checks: "digitTimer:twoDigitTimer|dt:TensPlace"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Mar 15 13:03:02 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; Lab3_VO_Thomas                                 ;
+; Top-level Entity Name           ; Lab3_VO_Thomas                                 ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 78                                             ;
+; Total pins                      ; 41                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; Lab3_VO_Thomas     ; Lab3_VO_Thomas     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; timer_1ms.v                      ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v       ;         ;
+; sevenSegDecoder.v                ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/sevenSegDecoder.v ;         ;
+; score.v                          ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v           ;         ;
+; rng.v                            ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v             ;         ;
+; oneSecTimer.v                    ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v     ;         ;
+; mux3to2.v                        ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v         ;         ;
+; LoadRegister.v                   ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/LoadRegister.v    ;         ;
+; Lab3_VO_Thomas.v                 ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v  ;         ;
+; Is15.v                           ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Is15.v            ;         ;
+; dt.v                             ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/dt.v              ;         ;
+; digitTimer.v                     ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v      ;         ;
+; count_to_100.v                   ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v    ;         ;
+; count_to_10.v                    ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v     ;         ;
+; counter.v                        ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v         ;         ;
+; buttonShaper.v                   ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/buttonShaper.v    ;         ;
+; Adder.v                          ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Adder.v           ;         ;
+; Access.v                         ; yes             ; User Verilog HDL File  ; F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v          ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 82        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 144       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 19        ;
+;     -- 5 input functions                    ; 20        ;
+;     -- 4 input functions                    ; 36        ;
+;     -- <=3 input functions                  ; 69        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 78        ;
+;                                             ;           ;
+; I/O pins                                    ; 41        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 78        ;
+; Total fan-out                               ; 841       ;
+; Average fan-out                             ; 2.77      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
+; |Lab3_VO_Thomas                          ; 144 (0)             ; 78 (0)                    ; 0                 ; 0          ; 41   ; 0            ; |Lab3_VO_Thomas                                                                         ; Lab3_VO_Thomas  ; work         ;
+;    |Access:myAC|                         ; 24 (24)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|Access:myAC                                                             ; Access          ; work         ;
+;    |Adder:myAdder|                       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|Adder:myAdder                                                           ; Adder           ; work         ;
+;    |Is15:verify|                         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|Is15:verify                                                             ; Is15            ; work         ;
+;    |LoadRegister:p1LR|                   ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|LoadRegister:p1LR                                                       ; LoadRegister    ; work         ;
+;    |buttonShaper:p1BS|                   ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|buttonShaper:p1BS                                                       ; buttonShaper    ; work         ;
+;    |buttonShaper:passwordBS|             ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|buttonShaper:passwordBS                                                 ; buttonShaper    ; work         ;
+;    |digitTimer:twoDigitTimer|            ; 54 (0)              ; 41 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer                                                ; digitTimer      ; work         ;
+;       |dt:OnesPlace|                     ; 9 (9)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:OnesPlace                                   ; dt              ; work         ;
+;       |dt:TensPlace|                     ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:TensPlace                                   ; dt              ; work         ;
+;       |oneSecTimer:my1s|                 ; 39 (0)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s                               ; oneSecTimer     ; work         ;
+;          |count_to_100:count_100ms_inst| ; 11 (11)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst ; count_to_100    ; work         ;
+;          |count_to_10:count_1s_inst|     ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst     ; count_to_10     ; work         ;
+;          |timer_1ms:timer_1ms_inst|      ; 22 (22)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst      ; timer_1ms       ; work         ;
+;    |mux3to2:myMUX|                       ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|mux3to2:myMUX                                                           ; mux3to2         ; work         ;
+;    |rng:myrng|                           ; 4 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|rng:myrng                                                               ; rng             ; work         ;
+;       |counter:myRNG|                    ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|rng:myrng|counter:myRNG                                                 ; counter         ; work         ;
+;    |score:myScore|                       ; 14 (14)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|score:myScore                                                           ; score           ; work         ;
+;    |sevenSegDecoder:DRNG|                ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DRNG                                                    ; sevenSegDecoder ; work         ;
+;    |sevenSegDecoder:DSum_ScoreOnes|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DSum_ScoreOnes                                          ; sevenSegDecoder ; work         ;
+;    |sevenSegDecoder:DTens|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DTens                                                   ; sevenSegDecoder ; work         ;
+;    |sevenSegDecoder:DTimerOnes|          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DTimerOnes                                              ; sevenSegDecoder ; work         ;
+;    |sevenSegDecoder:DTimerTens|          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:DTimerTens                                              ; sevenSegDecoder ; work         ;
+;    |sevenSegDecoder:Dp1|                 ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Lab3_VO_Thomas|sevenSegDecoder:Dp1                                                     ; sevenSegDecoder ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Lab3_VO_Thomas|Access:myAC|state                                                                                                                               ;
++----------------------+----------------+----------------------+----------------------+--------------+--------------+--------------+--------------+--------------+----------------+
+; Name                 ; state.gameplay ; state.wait_gameStart ; state.reconfig_timer ; state.verify ; state.digit4 ; state.digit3 ; state.digit2 ; state.digit1 ; state.gameOver ;
++----------------------+----------------+----------------------+----------------------+--------------+--------------+--------------+--------------+--------------+----------------+
+; state.digit1         ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0              ;
+; state.digit2         ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 1            ; 1            ; 0              ;
+; state.digit3         ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 1            ; 0            ; 1            ; 0              ;
+; state.digit4         ; 0              ; 0                    ; 0                    ; 0            ; 1            ; 0            ; 0            ; 1            ; 0              ;
+; state.verify         ; 0              ; 0                    ; 0                    ; 1            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.reconfig_timer ; 0              ; 0                    ; 1                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.wait_gameStart ; 0              ; 1                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.gameplay       ; 1              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 0              ;
+; state.gameOver       ; 0              ; 0                    ; 0                    ; 0            ; 0            ; 0            ; 0            ; 1            ; 1              ;
++----------------------+----------------+----------------------+----------------------+--------------+--------------+--------------+--------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------+
+; State Machine - |Lab3_VO_Thomas|buttonShaper:p1BS|state ;
++--------------+------------+--------------+--------------+
+; Name         ; state.init ; state.wait_s ; state.pulse  ;
++--------------+------------+--------------+--------------+
+; state.init   ; 0          ; 0            ; 0            ;
+; state.pulse  ; 1          ; 0            ; 1            ;
+; state.wait_s ; 1          ; 1            ; 0            ;
++--------------+------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |Lab3_VO_Thomas|buttonShaper:passwordBS|state ;
++--------------+------------+--------------+--------------------+
+; Name         ; state.init ; state.wait_s ; state.pulse        ;
++--------------+------------+--------------+--------------------+
+; state.init   ; 0          ; 0            ; 0                  ;
+; state.pulse  ; 1          ; 0            ; 1                  ;
+; state.wait_s ; 1          ; 1            ; 0                  ;
++--------------+------------+--------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++----------------------------------------------------+----------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal  ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------+------------------------+
+; mux3to2:myMUX|tens_out[0]                          ; Access:myAC|gameover ; yes                    ;
+; mux3to2:myMUX|tens_out[1]                          ; Access:myAC|gameover ; yes                    ;
+; mux3to2:myMUX|tens_out[2]                          ; Access:myAC|gameover ; yes                    ;
+; mux3to2:myMUX|tens_out[3]                          ; Access:myAC|gameover ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                      ;                        ;
++----------------------------------------------------+----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; Access:myAC|state~11                  ; Lost fanout        ;
+; Access:myAC|state~12                  ; Lost fanout        ;
+; Access:myAC|state~13                  ; Lost fanout        ;
+; buttonShaper:p1BS|state~4             ; Lost fanout        ;
+; buttonShaper:passwordBS|state~4       ; Lost fanout        ;
+; buttonShaper:p1BS|state.wait_s        ; Lost fanout        ;
+; buttonShaper:passwordBS|state.wait_s  ; Lost fanout        ;
+; Total Number of Removed Registers = 7 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 78    ;
+; Number of registers using Synchronous Clear  ; 45    ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab3_VO_Thomas|LoadRegister:p1LR|D_out[1]                                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Lab3_VO_Thomas|score:myScore|tens[3]                                                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Lab3_VO_Thomas|score:myScore|ones[0]                                                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst|count[0]     ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst|count[6] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst|count[9]      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:TensPlace|num[1]                                     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Lab3_VO_Thomas|digitTimer:twoDigitTimer|dt:OnesPlace|num[0]                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buttonShaper:passwordBS ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; init           ; 0     ; Signed Integer                              ;
+; pulse          ; 1     ; Signed Integer                              ;
+; wait_s         ; 2     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buttonShaper:p1BS ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; init           ; 0     ; Signed Integer                        ;
+; pulse          ; 1     ; Signed Integer                        ;
+; wait_s         ; 2     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Access:myAC ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; digit1         ; 0     ; Signed Integer                  ;
+; digit2         ; 1     ; Signed Integer                  ;
+; digit3         ; 2     ; Signed Integer                  ;
+; digit4         ; 3     ; Signed Integer                  ;
+; verify         ; 4     ; Signed Integer                  ;
+; reconfig_timer ; 5     ; Signed Integer                  ;
+; wait_gameStart ; 6     ; Signed Integer                  ;
+; gameplay       ; 7     ; Signed Integer                  ;
+; gameOver       ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sevenSegDecoder:DTimerTens"                                                                                                         ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; decode_out ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (4 bits) it drives; bit(s) "decode_out[6..4]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sevenSegDecoder:DTimerOnes"                                                                                                         ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; decode_out ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (4 bits) it drives; bit(s) "decode_out[6..4]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sevenSegDecoder:DTens"                                                                                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; decode_out ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (4 bits) it drives; bit(s) "decode_out[6..4]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sevenSegDecoder:DSum_ScoreOnes"                                                                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; decode_out ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (4 bits) it drives; bit(s) "decode_out[6..4]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sevenSegDecoder:DRNG"                                                                                                               ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; decode_out ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (4 bits) it drives; bit(s) "decode_out[6..4]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sevenSegDecoder:Dp1"                                                                                                                ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; decode_out ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (4 bits) it drives; bit(s) "decode_out[6..4]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digitTimer:twoDigitTimer|dt:TensPlace"                                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; nb_up ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b_up  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 78                          ;
+;     ENA               ; 19                          ;
+;     ENA SCLR          ; 29                          ;
+;     SCLR              ; 16                          ;
+;     SLD               ; 2                           ;
+;     plain             ; 12                          ;
+; arriav_lcell_comb     ; 145                         ;
+;     arith             ; 27                          ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 4                           ;
+;     normal            ; 118                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 36                          ;
+;         5 data inputs ; 20                          ;
+;         6 data inputs ; 19                          ;
+; boundary_port         ; 41                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.78                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Sat Mar 15 13:02:56 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab3_VO_Thomas -c Lab3_VO_Thomas
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file timer_1ms.v
+    Info (12023): Found entity 1: timer_1ms File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sevensegdecoder.v
+    Info (12023): Found entity 1: sevenSegDecoder File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/sevenSegDecoder.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file score.v
+    Info (12023): Found entity 1: score File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/score.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rng.v
+    Info (12023): Found entity 1: rng File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file onesectimer.v
+    Info (12023): Found entity 1: oneSecTimer File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux3to2.v
+    Info (12023): Found entity 1: mux3to2 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file loadregister.v
+    Info (12023): Found entity 1: LoadRegister File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/LoadRegister.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file lab3_vo_thomas.v
+    Info (12023): Found entity 1: Lab3_VO_Thomas File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file is15.v
+    Info (12023): Found entity 1: Is15 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Is15.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file dt.v
+    Info (12023): Found entity 1: dt File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/dt.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file digittimer.v
+    Info (12023): Found entity 1: digitTimer File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file count_to_100.v
+    Info (12023): Found entity 1: count_to_100 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file count_to_10.v
+    Info (12023): Found entity 1: count_to_10 File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: counter File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buttonshaper.v
+    Info (12023): Found entity 1: buttonShaper File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/buttonShaper.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file adder.v
+    Info (12023): Found entity 1: Adder File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Adder.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file access.v
+    Info (12023): Found entity 1: Access File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Access.v Line: 6
+Info (12127): Elaborating entity "Lab3_VO_Thomas" for the top level hierarchy
+Info (12128): Elaborating entity "buttonShaper" for hierarchy "buttonShaper:passwordBS" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 16
+Info (12128): Elaborating entity "LoadRegister" for hierarchy "LoadRegister:p1LR" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 22
+Info (12128): Elaborating entity "rng" for hierarchy "rng:myrng" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 27
+Info (12128): Elaborating entity "counter" for hierarchy "rng:myrng|counter:myRNG" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/rng.v Line: 9
+Warning (10230): Verilog HDL assignment warning at counter.v(14): truncated value with size 32 to match size of target (4) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/counter.v Line: 14
+Info (12128): Elaborating entity "digitTimer" for hierarchy "digitTimer:twoDigitTimer" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 32
+Info (12128): Elaborating entity "oneSecTimer" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v Line: 9
+Info (12128): Elaborating entity "timer_1ms" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s|timer_1ms:timer_1ms_inst" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 11
+Warning (10230): Verilog HDL assignment warning at timer_1ms.v(21): truncated value with size 32 to match size of target (16) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/timer_1ms.v Line: 21
+Info (12128): Elaborating entity "count_to_100" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_100:count_100ms_inst" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 12
+Warning (10230): Verilog HDL assignment warning at count_to_100.v(22): truncated value with size 32 to match size of target (7) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_100.v Line: 22
+Info (12128): Elaborating entity "count_to_10" for hierarchy "digitTimer:twoDigitTimer|oneSecTimer:my1s|count_to_10:count_1s_inst" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/oneSecTimer.v Line: 13
+Warning (10230): Verilog HDL assignment warning at count_to_10.v(21): truncated value with size 32 to match size of target (4) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/count_to_10.v Line: 21
+Info (12128): Elaborating entity "dt" for hierarchy "digitTimer:twoDigitTimer|dt:OnesPlace" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/digitTimer.v Line: 11
+Info (12128): Elaborating entity "Adder" for hierarchy "Adder:myAdder" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 36
+Info (12128): Elaborating entity "Is15" for hierarchy "Is15:verify" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 40
+Info (12128): Elaborating entity "score" for hierarchy "score:myScore" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 45
+Info (12128): Elaborating entity "mux3to2" for hierarchy "mux3to2:myMUX" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at mux3to2.v(9): inferring latch(es) for variable "tens_out", which holds its previous value in one or more paths through the always construct File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 9
+Info (10041): Inferred latch for "tens_out[0]" at mux3to2.v(14) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 14
+Info (10041): Inferred latch for "tens_out[1]" at mux3to2.v(14) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 14
+Info (10041): Inferred latch for "tens_out[2]" at mux3to2.v(14) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 14
+Info (10041): Inferred latch for "tens_out[3]" at mux3to2.v(14) File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/mux3to2.v Line: 14
+Info (12128): Elaborating entity "sevenSegDecoder" for hierarchy "sevenSegDecoder:Dp1" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 53
+Info (12128): Elaborating entity "Access" for hierarchy "Access:myAC" File: F:/Advanced Digital Design/Lab3_VO_Thomas/src/Lab3_VO_Thomas.v Line: 63
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file F:/Advanced Digital Design/Lab3_VO_Thomas/src/output_files/Lab3_VO_Thomas.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 185 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Sat Mar 15 13:03:02 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Advanced Digital Design/Lab3_VO_Thomas/src/output_files/Lab3_VO_Thomas.map.smsg.
+
+
